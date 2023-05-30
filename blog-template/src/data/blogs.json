@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Title 1",
+    "thumbnail": "https://images.unsplash.com/photo-1685300488141-76bc6bbd17d8",
+    "description": "Lorem ipsum what the actual thing is not monkey typing out of what the actual thing now that I am typing this I do not know"
+  },
+  {
+    "title": "Title 2",
+    "thumbnail": "https://images.unsplash.com/photo-1672683736529-7027d8d32c47",
+    "description": "Lorem ipsum what the actual thing is not monkey typing out of something"
+  },
+  {
+    "title": "Title 3",
+    "thumbnail": "https://images.unsplash.com/photo-1685322556482-65dc456a59ea",
+    "description": "Lorem ipsum what the actual thing is not monkey typing out of something why I am doing this I am doing what I do not know"
+  }
+]
