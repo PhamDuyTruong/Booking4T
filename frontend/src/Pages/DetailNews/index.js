@@ -6,7 +6,6 @@ import "./style.css";
 import { quoteNewsData } from "../../utils/fakeData";
 import { getDetailBlog } from "../../Actions/BlogsAction";
 
-
 const DetailNews = () => {
   const { detailBlog, isLoading } = useSelector((state) => state.detailBlogs);
   const { blogs } = useSelector((state) => state.blogs);
@@ -16,14 +15,13 @@ const DetailNews = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   useLayoutEffect(() => {
-    dispatch(getDetailBlog(newId))
+    dispatch(getDetailBlog(newId));
   }, [newId]);
-
 
   const handleClick = (item) => {
     history.push(`/new/${item._id}`);
   };
- 
+
   return (
     <>
       {isLoading && <div>Loading ...</div>}
@@ -55,15 +53,20 @@ const DetailNews = () => {
                     className="h-[350px] mb-4"
                   />
 
-                  {detailBlog.detailPhotos?.length !== 0 && (
-                    <img
-                      src={detailBlog.detailPhotos[0]}
-                      alt="news"
-                      width="100%"
-                      className="h-[350px] mb-4"
-                    />
-                  )}
-                  <p>{detailBlog.fullText}</p>
+                  {detailBlog.detailPhotos &&
+                    detailBlog.detailPhotos?.length !== 0 && (
+                      <img
+                        src={detailBlog.detailPhotos[0]}
+                        alt="news"
+                        width="100%"
+                        className="h-[350px] mb-4"
+                      />
+                    )}
+                  <p>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: detailBlog.fullText }}
+                    ></div>
+                  </p>
                 </div>
                 <div className="mt-4">
                   <Row>

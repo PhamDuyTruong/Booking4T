@@ -20,12 +20,8 @@ const NewsCard = ({ news }) => {
       </div>
       <div className="textContainer">
         <p style={{ fontSize: "22px" }}>{news.title}</p>
-        <p style={{ fontSize: "16px", color: "#ddd" }}>
-          {news.fullText.length > 30
-            ? news.fullText.slice(0, 30) + "..."
-            : news + "..."}
-          {"... "}
-        </p>
+        <div dangerouslySetInnerHTML={{ __html: news.fullText.length > 30 ? news.fullText.slice(0, 30) + "..." : news + "..." }} ></div>
+        {"... "}
         <Link to={`new/${news._id}`} className="readMore">
           Read More
         </Link>
